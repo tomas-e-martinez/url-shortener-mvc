@@ -10,7 +10,7 @@ var conn = Environment.GetEnvironmentVariable("MSSQL_URL") ?? builder.Configurat
 
 builder.Services.AddDbContext<Context>(options =>
 {
-    options.UseSqlServer(conn);
+    options.UseMySql(conn, ServerVersion.AutoDetect(conn));
 });
 
 var app = builder.Build();
