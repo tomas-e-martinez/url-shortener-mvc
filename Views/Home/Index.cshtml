@@ -15,8 +15,10 @@
         </div>
         <div class="formGroup">
             <label>Short Link</label>
-            <input type="url" id="shortLink" name="shortLink" disabled
-                value="@(Model != null ? $"{urlBase}/r/{Model.Short}" : "")"/>
+            <a id="shortLink" name="shortLink" disabled target="_blank"
+                href="@(Model != null ? $"{urlBase}/r/{Model.Short}" : "")">
+                @(Model != null ? $"{urlBase}/r/{Model.Short}" : "")
+            </a>
         </div>
         <button type="submit">Shorten</button>
     </form>
